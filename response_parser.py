@@ -1,12 +1,27 @@
 import json
 
 
-def parse_ai_response(response_text):
-    try:
-        return json.loads(response_text)
+def parse_ai_response(response):
 
-    except json.JSONDecodeError:
+    try:
+
+        response = response.replace(
+            "```json",
+            ""
+        )
+
+        response = response.replace(
+            "```",
+            ""
+        )
+
+        response = response.strip()
+
+        return json.loads(response)
+
+    except Exception:
+
         return {
             "error": True,
-            "raw_response": response_text
+            "raw_response": response
         }
