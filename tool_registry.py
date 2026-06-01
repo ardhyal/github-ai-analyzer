@@ -4,13 +4,17 @@ TOOLS = {}
 def register_tool(
     name,
     func,
-    description
+    description,
+    parameters
 ):
 
-    TOOLS[name] = {
-        "function": func,
-        "description": description
+    TOOLS = {
+    "github": {
+        "function": ...,
+        "description": ...,
+        "parameters": ...
     }
+}
 
 
 def execute_tool(

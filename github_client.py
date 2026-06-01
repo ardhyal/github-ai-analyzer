@@ -7,7 +7,10 @@ def get_github_user(username):
         timeout=10
     )
 
-    response.raise_for_status()
+    try:
+        response.raise_for_status()
+    except Exception:
+        return None
 
     return response.json()
 

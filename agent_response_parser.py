@@ -1,18 +1,6 @@
-import json
-
+from json_parser import (
+    parse_json_response
+)
 
 def parse_agent_response(response):
-
-    response = response.replace(
-        "```json",
-        ""
-    )
-
-    response = response.replace(
-        "```",
-        ""
-    )
-
-    response = response.strip()
-
-    return json.loads(response)
+    return parse_json_response(response)

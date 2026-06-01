@@ -21,13 +21,19 @@ import json
 register_tool(
     "github",
     analyze_github_user,
-    "Analyze GitHub profile and repositories"
+    "Analyze GitHub profile and repositories",
+    {
+        "username": "string"
+    }
 )
 
 register_tool(
     "resume",
     analyze_resume,
-    "Analyze resume and provide career insights"
+    "Analyze resume and provide career insights",
+    {
+        "file_path": "string"
+    }
 )
 
 

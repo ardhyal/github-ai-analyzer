@@ -32,3 +32,39 @@ github-analyzer
 - `github_analyzer/cli.py` composes dependencies and handles runtime errors
 - `github_analyzer/exceptions.py` defines explicit domain errors
 - `main.py` is a small entrypoint that delegates to the CLI layer
+
+# GitHub AI Analyzer
+
+An AI-powered GitHub profile analyzer built using:
+
+- Python
+- Gemini API
+- GitHub API
+
+## Features
+
+- GitHub profile analysis
+- Repository analysis
+- Tool registry
+- AI tool selection
+- Agent execution
+
+## Architecture
+
+User
+↓
+Agent
+↓
+Tool Selection
+↓
+Tool Execution
+↓
+GitHub API
+↓
+Gemini
+↓
+JSON Response
+
+## Run
+
+uv run main.py

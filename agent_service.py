@@ -73,3 +73,25 @@ User request:
     return parse_agent_response(
         response
     )
+
+def build_tool_prompt():
+
+    tools = get_tools_metadata()
+
+    lines = []
+
+    for name, info in tools.items():
+
+        lines.append(
+            f"""
+Tool: {name}
+
+Description:
+{info["description"]}
+
+Parameters:
+{info["parameters"]}
+"""
+        )
+
+    return "\n".join(lines)

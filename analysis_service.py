@@ -18,6 +18,11 @@ from response_parser import parse_ai_response
 def analyze_github_user(username):
     user = get_github_user(username)
 
+    if not user:
+        return {
+            "error": "GitHub user not found"
+        }
+
     repos = get_github_repositories(username)
 
     top_repos = get_top_repositories(repos)
