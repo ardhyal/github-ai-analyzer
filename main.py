@@ -12,10 +12,6 @@ from tool_registry import (
     list_tools
 )
 
-from resume_service import (
-    analyze_resume
-)
-
 import json
 
 register_tool(
@@ -24,15 +20,6 @@ register_tool(
     "Analyze GitHub profile and repositories",
     {
         "username": "string"
-    }
-)
-
-register_tool(
-    "resume",
-    analyze_resume,
-    "Analyze resume and provide career insights",
-    {
-        "file_path": "string"
     }
 )
 

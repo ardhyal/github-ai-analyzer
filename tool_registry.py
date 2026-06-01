@@ -8,13 +8,11 @@ def register_tool(
     parameters
 ):
 
-    TOOLS = {
-    "github": {
-        "function": ...,
-        "description": ...,
-        "parameters": ...
+    TOOLS[name] = {
+        "function": func,
+        "description": description,
+        "parameters": parameters
     }
-}
 
 
 def execute_tool(
@@ -35,10 +33,12 @@ def execute_tool(
 
 
 def list_tools():
+
     return list(
         TOOLS.keys()
     )
 
 
 def get_tools_metadata():
+
     return TOOLS

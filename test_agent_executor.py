@@ -10,21 +10,19 @@ from analysis_service import (
     analyze_github_user
 )
 
-from resume_service import (
-    analyze_resume
-)
 
 register_tool(
     "github",
     analyze_github_user,
-    "Analyze GitHub profile and repositories"
+    "Analyze GitHub profile and repositories",
+    {
+        "username": "string"
+    }
 )
 
-register_tool(
-    "resume",
-    analyze_resume,
-    "Analyze resume and provide career insights"
-)
+from tool_registry import get_tools_metadata
+
+print(get_tools_metadata())
 
 result = execute_agent(
     "Analyze GitHub user torvalds"
